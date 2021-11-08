@@ -1,0 +1,36 @@
+body{
+
+background: white;
+
+}
+
+.titulo{
+
+padding-top: 15px;
+background-color: #F9F606;
+}
+
+h1{
+    text-align: center;
+    color: #032A3C;
+}
+#logoUsa{
+
+    align-items: 30%;
+    margin-left: 40%;
+    }
+
+    #operaciones{
+
+        margin-left: 45%;
+    }
+
+    .botones{
+
+        margin-left: 40%;
+    }
+
+   button{
+
+    background-color: #F9F606;
+   }
