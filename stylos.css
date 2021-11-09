@@ -27,10 +27,14 @@ h1{
 
     .botones{
 
-        margin-left: 40%;
+        margin-left:45%;
     }
 
    button{
 
     background-color: #F9F606;
+    border-radius: 10%;
+    box-shadow: #032A3C;
    }
+
+   
