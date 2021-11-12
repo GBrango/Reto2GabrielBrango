@@ -19,20 +19,14 @@
 <body>
 
     <div class="container">
-        <div class="encabezado">
-            <h1>Informacion del cliente</h1>
-        </div>
-
-     <div id="resultado"></div>
-        <button class="botones" onclick="traerInformacion()">Consultar</button>
-    
-    <hr>
+       
     <h1>FORMULARIO PARA VISUALIZAR DATOS DEL CLIENTE</h1>
    
     <fieldset style="width: 50%;">
         <legend>Datos del cliente:</legend> 
          <table align="center" border="1" style="width: 100%">
-             <caption>Reporte de GASTOS</caption>
+             <caption style="color: darkred;">Información del Cliente:</caption>
+             <hr>
              <tr>
                  <th>ID</th>
                  <td>
@@ -44,16 +38,46 @@
                  <td colspan="2">
                      <input type="button" value="LIMPIAR" onclick="limpiarFormularioJq()">
                      &nbsp;&nbsp;&nbsp;&nbsp;
-                     <input type="button" value="TODOS" onclick="consultar()"  >
+                     <input type="button" value="TODOS" onclick="traerInformacion()">
                      &nbsp;&nbsp;&nbsp;&nbsp;
-                     <input type="button" value="POR ID" onclick="consultarPorId($('#codigo'))"  >
+                     <input type="button" value="POR ID" onclick="consultarPorId($('#codigo'))">
                  </td>
              </tr>   
          </table>
-         <div id="resultado"></div>
+         <div id="resultado">
+            <!-- Aquì se invoca la tabla con la consulta de los Clientes -->
+
+         </div>
+
+         <!--Formulario-->
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input type="number" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Enter id">
+           
+         </div>
+
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+          </div>
+         
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="email" class="form-control" id="email" placeholder="email">
+          </div>
+
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad" placeholder="edad">
+          </div>
+
+          <button  class="btn btn-success" onclick="guardarInformacion()">Guardar</button>
+          <button  class="btn btn-info" onclick="editarInformacion()">Editar</button>
+                 
+
      </fieldset>
 
-    </div>
+   
 
         
 
