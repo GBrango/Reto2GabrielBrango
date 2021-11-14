@@ -3,7 +3,12 @@ body{
 background: white;
 
 }
+.container{
 
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(250, 70, 70));
+
+
+}
 .titulo{
 
 padding-top: 15px;

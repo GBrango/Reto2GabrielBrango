@@ -30,7 +30,7 @@ function pintarRespuesta(items){
       myTable += "<td>"+items[i].name+"</td>";
       myTable += "<td>"+items[i].email+"</td>";
       myTable += "<td>"+items[i].age+"</td>";
-      myTable += "<td> <button class='btn btn-danger' onclick='borrarElemento("+items[i].id+")'>Borrar cliente</button>";
+      myTable += "<td> <button class='btn btn-danger'  onclick='borrarElemento("+items[i].id+")'>Borrar cliente </button>";
       myTable+="</tr>";
 
   } 
@@ -169,3 +169,55 @@ function borrarElemento(idElemento) {
 
   });
 }
+function consultaPorId(campoId){
+  if(campoId.val() == ""){
+      alert('Campo ID no puede estar vacio !!!')
+  }
+  else{
+      var id = campoId.val()
+      $.ajax(
+          {
+              url: 'https://g9989ca3af8e71e-db202110301445.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client/'+id,
+              type: 'GET',
+              dataType: 'json',
+              success: function(json){
+                  $("#resultado").empty();
+                  if(json.items.length==0){
+                      alert("Campo ID no encontrado")
+                      campoId.val("")
+                  }
+                  else{
+                      tabla = "<center><table class='table-active' border='3'><tr><th>ID<th>NOMBRE<th>EMAIL<th>AGE" 
+                  total = 0;
+                  filas = ""
+                  for (let i = 0; i < json.items.length; i++) {
+                      filas += "<tr>"
+                      filas += "<td>" + json.items[i].id 
+                      filas += "<td>" + json.items[i].name
+                      filas += "<td>" + json.items[i].email 
+                      filas += "<td>" + json.items[i].age 
+                      //filas += "<td> <button class='btn btn-danger' onclick='borrarElemento("+items[i].id+")'>Borrar cliente</button>";
+                      // filas += "<td>" + json.items[i].usuario
+                      total += json.items[i].valor
+                  }
+                  $("#resultado").append(tabla + filas);
+                  console.log(json)
+                  }
+                  
+              },
+              complete: function(xhr, status){
+                  alert('peticion realizada, ' + xhr.status);
+                  
+              }, 
+              error: function(xhr, status){
+                  alert('ha sucedido un error, ' + xhr.status);
+                  
+            }
+              
+
+          }
+          
+      );
+  }
+}
+
