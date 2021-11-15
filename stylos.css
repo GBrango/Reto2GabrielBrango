@@ -3,10 +3,11 @@ body{
 background: white;
 
 }
-.container{
+.contenedor{
 
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(250, 70, 70));
-
+    margin-right: 10%;
+    margin-left: 10%;
 
 }
 .titulo{

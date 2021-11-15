@@ -1,3 +1,5 @@
+
+
 function traerInformacion(){
   $.ajax({
     url:"https://g9989ca3af8e71e-db202110301445.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client",
@@ -169,6 +171,8 @@ function borrarElemento(idElemento) {
 
   });
 }
+
+
 function consultaPorId(campoId){
   if(campoId.val() == ""){
       alert('Campo ID no puede estar vacio !!!')
