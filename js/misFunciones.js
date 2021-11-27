@@ -2,7 +2,7 @@
 
 function traerInformacion(){
   $.ajax({
-    url:"https://g9989ca3af8e71e-db202110301445.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client",
+    url:"http://129.151.112.149:8080",
     type:"GET",
     datatype:"JSON",
 
@@ -24,13 +24,14 @@ function traerInformacion(){
 
 function pintarRespuesta(items){
 
-  let myTable = "<table class='table table-striped table-dark'><tr><th>ID<th>NOMBRE<th>EMAIL<th>EDAD<th>MANTENIMIENTO";
+  let myTable = "<table class='table table-striped table-dark'><tr><th>ID<th>EMAIL<th>PASSWORD<th>NAME<th>EDAD<th>MANTENIMIENTO";
   
   for (i = 0; i<items.length; i++){
       myTable+="<tr>";
       myTable += "<td>"+items[i].id+"</td>";
-      myTable += "<td>"+items[i].name+"</td>";
       myTable += "<td>"+items[i].email+"</td>";
+      myTable += "<td>"+items[i].password+"</td>";
+      myTable += "<td>"+items[i].name+"</td>";
       myTable += "<td>"+items[i].age+"</td>";
       myTable += "<td> <button class='btn btn-danger'  onclick='borrarElemento("+items[i].id+")'>Borrar cliente </button>";
       myTable+="</tr>";
