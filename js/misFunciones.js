@@ -2,7 +2,7 @@
 
 function traerInformacion(){
   $.ajax({
-    url:"http://129.151.112.149:8080",
+    url:"http://129.151.112.149:8080/api/Client/all",
     type:"GET",
     datatype:"JSON",
 
